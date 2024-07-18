@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    height: 45vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.headline {
+    text-align: center;
+}
+
+.headline .lead {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.headline a {
+
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    width: 100vw;
+    max-height: 100vh;
+    margin-top: -122px;
+}
+
+/*# sourceMappingURL=Hero.module.css.map */

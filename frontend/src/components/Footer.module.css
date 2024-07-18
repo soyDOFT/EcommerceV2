@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    padding: 15px 30px;
+    width: 100vw;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.subscribe {
+    margin: 16px 0;
+}
+
+/*# sourceMappingURL=Footer.module.css.map */

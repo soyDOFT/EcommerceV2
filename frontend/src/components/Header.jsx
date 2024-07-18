@@ -4,7 +4,8 @@ import logo from '../assets/logo.png'
 import cartIcon from '../assets/shopping_cart.svg'
 
 export default function Header() {
-    return (
+  return (
+    <>
       <nav className={styles.nav}>
         <ul>
           <li><img className={styles.logo} src={logo} alt="DOFT logo"></img></li>
@@ -22,5 +23,6 @@ export default function Header() {
           <li className={styles.cartBtn}><img src={cartIcon} alt="shopping cart button"></img></li>
         </ul>
       </nav>
-    )
-  }
+    </>
+  )
+}
