@@ -1,14 +1,13 @@
 .nav {
   display: flex;
   position: sticky;
-  padding: 5px 30px;
+  padding: 5px 50px;
   margin: 30px 50px;
   justify-content: space-between;
   border: 1px solid white;
   border-radius: 30px;
   background-color: transparent;
 }
-
 .nav ul {
   margin: 0;
   padding: 0;
@@ -16,7 +15,6 @@
   list-style: none;
   justify-content: space-between;
 }
-
 .nav ul li {
   display: flex;
   justify-content: space-evenly;
@@ -38,6 +36,4 @@
 
 .cartBtn:hover {
   cursor: pointer;
-}
-
-/*# sourceMappingURL=Header.module.css.map */
+}/*# sourceMappingURL=Header.module.css.map */

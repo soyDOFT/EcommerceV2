@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import video from '../assets/abstract-video.mp4'
 import style from './Hero.module.css'
 
@@ -11,7 +12,7 @@ export default function Hero() {
             <div className={style.headline}>
                 <p className={style.lead}>PREBUILT PCs</p>
                 <p className={style.description}>Artisan built custom computer systems</p>
-                <a href="/products">SHOP</a>
+                <NavLink to="/products">SHOP</NavLink>
             </div>
         </div>
 

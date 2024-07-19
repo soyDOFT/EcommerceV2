@@ -10,19 +10,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-:global(.active) {
-  border-bottom: solid 1px white;
-}
-
 a {
   font-weight: 400;
   color: white;
   text-decoration: none;
 }
-
 a:hover {
   color: grey;
-  cursor: pointer;
 }
 
 body {
@@ -43,10 +37,13 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
-button:focus,
-button:focus-visible {
+button:focus, button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.active {
+  border-bottom: 1px solid grey;
+  color: grey;
 }
 
 @media (prefers-color-scheme: light) {
@@ -54,14 +51,10 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
-
   a:hover {
-    color: #747bff;
+    color: grey;
   }
-
   button {
     background-color: #f9f9f9;
   }
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
