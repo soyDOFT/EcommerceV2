@@ -9,14 +9,10 @@
   text-align: center;
 }
 
-.lead {
+.headline .lead {
   font-size: 3rem;
   font-weight: 700;
   margin: 0;
-}
-
-.description {
-  margin-bottom: 20px; 
 }
 
 .headline a {
@@ -24,6 +20,7 @@
   border: 1px solid white;
   padding: 5px 15px;
   border-radius: 10px;
+  color: white;
 }
 
 .background {

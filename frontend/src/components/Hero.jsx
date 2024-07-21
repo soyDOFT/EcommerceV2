@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import video from '../assets/abstract-video.mp4'
 import style from './Hero.module.css'
 
-export default function Hero() {
+export default function Hero({video, headline, lead, description}) {
     return (
         <div className={style.container}>
             <video className={style.background} autoPlay muted loop>

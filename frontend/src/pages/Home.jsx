@@ -1,7 +1,10 @@
 import Hero from "../components/Hero"
 import styles from "./Home.module.css"
+import mercuryImage from "../assets/prebuilts/Nightfall.webp"
+import flamingoImage from "../assets/prebuilts/flamingo.png"
 import laptopImage from "../assets/laptop-product-image.webp"
 import desktopImage from "../assets/desktop-product-image.webp"
+import accessoryImage from "../assets/accessory-product-image.webp"
 export default function Home() {
   return (
     <>
@@ -9,29 +12,29 @@ export default function Home() {
       <div className={styles.container}>
         <section>
           <div className={styles.special}>
-            <img src="" alt=""></img>
-            <p>Limited Edition</p>
-            <p>Themed, Limited Quanity Builds</p>
-          </div>
-          <div className={styles.long}>
-            <img src="" alt=""></img>
+            <img className={styles.mercuryImg} src={mercuryImage} alt="Liquid Mercury Series PC"></img>
             <p>Liquid Mercury Series</p>
             <p>Our Premium Prebuilts, Ships Same Day</p>
+          </div>
+          <div className={styles.long}>
+            <img className={styles.flamingoImg} src={flamingoImage} alt=""></img>
+            <p>Limited Edition</p>
+            <p>Themed, Limited Quantity Builds</p>
           </div>
         </section>
         <section>
           <div className={styles.short}>
-          <img className={styles.img} src={desktopImage} alt="desktop products page"></img>
+          <img className={styles.desktopImg} src={desktopImage} alt="desktop products page"></img>
             <p>Desktops</p>
             <p></p>
           </div>
           <div className={styles.short}>
-            <img className={styles.img} src={laptopImage} alt="laptop products page"></img>
+            <img className={styles.laptopImg} src={laptopImage} alt="laptop products page"></img>
             <p>Laptops</p>
             <p></p>
           </div>
           <div className={styles.short}>
-            <img src="" alt=""></img>
+            <img className={styles.accessoryImg} src={accessoryImage} alt="accessory products page"></img>
             <p>Accessories</p>
             <p></p>
           </div>
