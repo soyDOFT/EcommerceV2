@@ -3,7 +3,10 @@ import mysql from 'mysql2';
 import cors from 'cors';
 
 const app = express();
+const router = express.Router();
+app.use("/api", router);
 app.use(cors());
+app.use(express.static('./dist'));
 
 const PORT = process.env.PORT || 8080;
 const connection = await mysql.createConnection({
@@ -14,9 +17,13 @@ const connection = await mysql.createConnection({
     database: process.env.DB_DATABASE || 'test'
 })
 
-app.get('/api/products', async (req, res) => {
+router.get('/products', async (req, res) => {
     const [products] = await connection.promise().execute(`SELECT * from products`);
     res.json(products);
 });
+
+app.get('*', (req, res) => {
+    res.sendFile('./dist/index.html');
+})
 
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
