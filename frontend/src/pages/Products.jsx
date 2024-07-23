@@ -5,7 +5,7 @@ export default function Products() {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/products', {
+        fetch('/api/products', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
