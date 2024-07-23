@@ -1,15 +1,16 @@
-import express from 'express';
-import mysql from 'mysql2';
-import cors from 'cors';
+const express = require('express');
+const mysql = require('mysql2');
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const router = express.Router();
 app.use("/api", router);
 app.use(cors());
-app.use(express.static('./dist'));
+app.use(express.static(path.join(__dirname, '/dist')));
 
 const PORT = process.env.PORT || 8080;
-const connection = await mysql.createConnection({
+const connection = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 3306,
     user: process.env.DB_USER || 'root',
@@ -23,7 +24,7 @@ router.get('/products', async (req, res) => {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile('./dist/index.html');
+    res.sendFile(path.join(__dirname, '/dist/', 'index.html'));
 })
 
 app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
