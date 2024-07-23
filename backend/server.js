@@ -9,7 +9,7 @@ app.use("/api", router);
 app.use(cors());
 app.use(express.static(path.join(__dirname, '/dist')));
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const connection = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 3306,
