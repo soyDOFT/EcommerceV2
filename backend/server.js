@@ -18,6 +18,11 @@ const connection = mysql.createConnection({
     database: process.env.DB_DATABASE || 'test'
 })
 
+connection.connect((err) => {
+    if (err) console.log(err);
+    else console.log('database connected');
+})
+
 router.get('/products', async (req, res) => {
     const [products] = await connection.promise().execute(`SELECT * from products`);
     res.json(products);
