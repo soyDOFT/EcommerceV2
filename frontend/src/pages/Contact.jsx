@@ -1,4 +1,4 @@
-import styles from './Contact.module.css'
+import styles from '../styles/Contact.module.css'
 import phoneIcon from '../assets/phone-icon.svg'
 import emailIcon from '../assets/email-icon.svg'
 import addressIcon from '../assets/address-icon.svg'

@@ -7,6 +7,7 @@
   border: 1px solid white;
   border-radius: 30px;
   background-color: transparent;
+  min-width: 500px;
 }
 .nav ul {
   margin: 0;
@@ -19,6 +20,10 @@
   display: flex;
   justify-content: space-evenly;
   margin: 5px 10px;
+}
+
+.tempLinks:hover {
+  color: grey;
 }
 
 .vert {
@@ -122,4 +127,3 @@
     cursor: pointer;
   }
 }
-/*# sourceMappingURL=Header.module.css.map */

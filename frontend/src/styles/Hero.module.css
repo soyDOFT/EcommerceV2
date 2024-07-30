@@ -3,6 +3,7 @@
   height: 49vw;
   justify-content: center;
   align-items: center;
+  margin-top: -120px;
 }
 
 .headline {
@@ -27,5 +28,4 @@
   position: fixed;
   z-index: -100;
   width: 100vw;
-  margin-top: -122px;
-}/*# sourceMappingURL=Hero.module.css.map */
+}

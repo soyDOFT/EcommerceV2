@@ -1,0 +1,66 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 1fr;
+}
+
+.search {
+    grid-column: 1 / 4;
+}
+
+.searchForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchForm input {
+    margin: 10px;
+}
+
+.searchForm label, .searchForm select {
+    margin: 5px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    background-color: #111;
+    margin: 10px 30px;
+}
+
+.productName {
+    text-align: center;
+}
+
+.productDescription {
+    padding: 0 25px;
+}
+
+.productPrice {
+    text-align: center;
+    margin: 0;
+    color: green;
+}
+
+.productImage {
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 50px
+}
+
+.product:hover {
+    margin: 0;
+    cursor: pointer;
+    transform: scale(1.05);
+    color: white;
+}
+
+.cartButton {
+    align-self: center;
+    width: 150px;
+    background-color: red;
+    margin: 0 0 15px;
+}

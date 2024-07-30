@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import styles from './Footer.module.css'
+import styles from '../styles/Footer.module.css'
 import tiktokIcon from '../assets/tiktok-icon-96.png'
 import instagramIcon from '../assets/instagram-icon-96.png'
 import twitterIcon from '../assets/twitter-icon-96.png'

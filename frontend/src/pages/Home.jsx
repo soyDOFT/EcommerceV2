@@ -1,14 +1,15 @@
 import Hero from "../components/Hero"
-import styles from "./Home.module.css"
+import styles from "../styles/Home.module.css"
 import mercuryImage from "../assets/prebuilts/Nightfall.webp"
 import flamingoImage from "../assets/prebuilts/flamingo.png"
 import laptopImage from "../assets/laptop-product-image.webp"
 import desktopImage from "../assets/desktop-product-image.webp"
 import accessoryImage from "../assets/accessory-product-image.webp"
+import abstractVideo from "../assets/abstract-video.mp4"
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero video={abstractVideo} lead={'PREBUILT PCs'} description={'Artisan built custom computer systems'} button={'SHOP'}/>
       <div className={styles.container}>
         <section>
           <div className={styles.special}>

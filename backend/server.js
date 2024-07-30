@@ -6,10 +6,10 @@ const path = require('path');
 const app = express();
 const router = express.Router();
 app.use("/api", router);
-app.use(cors());
 app.use(express.static(path.join(__dirname, '/dist')));
+app.use(cors());
 
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 const connection = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 3306,
@@ -24,8 +24,13 @@ connection.connect((err) => {
 })
 
 router.get('/products', async (req, res) => {
-    const [products] = await connection.promise().execute(`SELECT * from products`);
-    res.json(products);
+    try {
+        const [products] = await connection.promise().execute(`SELECT * from products`);
+        res.json(products);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error')
+    }
 });
 
 app.get('*', (req, res) => {
