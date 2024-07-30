@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Hero from "../components/Hero"
 import styles from "../styles/Home.module.css"
 import mercuryImage from "../assets/prebuilts/Nightfall.webp"
@@ -24,21 +25,27 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className={styles.short}>
-          <img className={styles.desktopImg} src={desktopImage} alt="desktop products page"></img>
-            <p>Desktops</p>
-            <p></p>
-          </div>
+          <Link to='/products'>
+            <div className={styles.short}>
+            <img className={styles.desktopImg} src={desktopImage} alt="desktop products page"></img>
+              <p>Desktops</p>
+              <p></p>
+            </div>
+          </Link>
+          <Link to='/products'>
           <div className={styles.short}>
             <img className={styles.laptopImg} src={laptopImage} alt="laptop products page"></img>
             <p>Laptops</p>
             <p></p>
           </div>
-          <div className={styles.short}>
-            <img className={styles.accessoryImg} src={accessoryImage} alt="accessory products page"></img>
-            <p>Accessories</p>
-            <p></p>
-          </div>
+          </Link>
+          <Link to='/products'>
+            <div className={styles.short}>
+              <img className={styles.accessoryImg} src={accessoryImage} alt="accessory products page"></img>
+              <p>Accessories</p>
+              <p></p>
+            </div>
+          </Link>
         </section>
       </div>
     </>

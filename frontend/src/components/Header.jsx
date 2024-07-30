@@ -21,11 +21,9 @@ export default function Header() {
         <ul>
           <li><img className={styles.logo} src={logo} alt="DOFT logo"></img></li>
           <div className={styles.vert}></div>
-          <li><NavLink to="/about" className={styles.tempLinks}>ABOUT</NavLink></li>
-          <li><NavLink to="/help" className={styles.tempLinks}>HELP</NavLink></li>
         </ul>
         <img onClick={menuOn} className={styles.menu} src={menuIcon} alt="side navigation bar button"></img>
-        <ul>
+        <ul className={styles.rightLinks}>
           <li><NavLink to="/" className={styles.tempLinks}>HOME</NavLink></li>
           <li><NavLink to="/products" className={styles.tempLinks}>PRODUCTS</NavLink></li>
           <li><NavLink to="/contact" className={styles.tempLinks}>CONTACT</NavLink></li>
@@ -39,7 +37,6 @@ export default function Header() {
         <div className={styles.ribbon}><img onClick={menuOff} src={closeIcon} alt="close menu button"></img> </div>
         <ul className={styles.sideNavbar}>
             <li><NavLink onClick={menuOff} to="/">HOME</NavLink></li>
-            <li><NavLink onClick={menuOff} to="/about">ABOUT</NavLink></li>
             <li><NavLink onClick={menuOff} to="/products">PRODUCTS</NavLink></li>
             <li><NavLink onClick={menuOff} to="/contact">CONTACT</NavLink></li>
             <li><NavLink onClick={menuOff} className={styles.sideLogin} to="/login">LOGIN</NavLink></li>

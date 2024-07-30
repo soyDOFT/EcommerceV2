@@ -7,7 +7,6 @@
   border: 1px solid white;
   border-radius: 30px;
   background-color: transparent;
-  min-width: 500px;
 }
 .nav ul {
   margin: 0;
@@ -125,5 +124,28 @@
 
   .ribbon {
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .tempLinks {
+    display: none;
+  }
+
+  .menu {
+    display: inline;
+    margin: 0 0 0 30px;
+  }
+
+  .menu:hover {
+    cursor: pointer;
+  }
+
+  .ribbon {
+    cursor: pointer;
+  }
+
+  .nav .rightLinks {
+    display: none;
   }
 }

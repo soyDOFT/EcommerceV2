@@ -24,7 +24,7 @@ export default function Footer() {
         </li>
       </ul>
       <aside className={styles.subscribe}>
-        <p>Subsribe to our newsletter:</p>
+        <p>Subscribe to our newsletter:</p>
         <form>
           <input type='text' placeholder="email"></input>
           <input type='submit' value="Join"></input>
