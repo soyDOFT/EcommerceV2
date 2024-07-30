@@ -7,6 +7,11 @@ import laptopImage from "../assets/laptop-product-image.webp"
 import desktopImage from "../assets/desktop-product-image.webp"
 import accessoryImage from "../assets/accessory-product-image.webp"
 import abstractVideo from "../assets/abstract-video.mp4"
+import { swiffyslider } from 'swiffy-slider';
+window.swiffyslider = swiffyslider;
+window.addEventListener("load", () => window.swiffyslider.init());
+import "swiffy-slider/css";
+
 export default function Home() {
   return (
     <>
@@ -47,6 +52,24 @@ export default function Home() {
             </div>
           </Link>
         </section>
+        <div className={styles.slider}>
+          <div className="swiffy-slider">
+              <ul className="slider-container">
+                  <li><img src="\prebuilts\sweetdreams.webp" style={{maxWidth: '100%',height: 'auto'}}/></li>
+                  <li><img src="\prebuilts\horizon2.webp" style={{maxWidth: '100%',height: 'auto'}}/></li>
+                  <li><img src="laptops\acer-predatorhelios16.png" style={{maxWidth: '100%',height: 'auto'}}/></li>
+              </ul>
+
+              <button type="button" className="slider-nav"></button>
+              <button type="button" className="slider-nav slider-nav-next"></button>
+
+              <div className="slider-indicators">
+                  <button className="active"></button>
+                  <button></button>
+                  <button></button>
+              </div>
+          </div>
+        </div>
       </div>
     </>
   )
