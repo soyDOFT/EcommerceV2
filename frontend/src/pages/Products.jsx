@@ -4,8 +4,10 @@ import styles from "../styles/Products.module.css";
 
 export default function Products() {
     const [products, setProducts] = useState([]);
-    const[allProducts, setAllProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
     const [search, setSearch] = useState('');
+    const [sortBy, setSortBy] = useState('highprice');
+    const [filter, setFilter] = useState('all');
 
     useEffect(() => {
         fetch('/api/products', {
@@ -15,17 +17,17 @@ export default function Products() {
                 'Content-Type': 'application/json'
             }
         })
-        .then(res => {
-            if (!res.ok) throw new Error('Error: invalid response');
-            return res.json();
-        })
-        .then(data => {
-            setProducts(data);
-            setAllProducts(data);
-        })
-        .catch(err => console.log(err));
+            .then(res => {
+                if (!res.ok) throw new Error('Error: invalid response');
+                return res.json();
+            })
+            .then(data => {
+                setProducts(data);
+                setAllProducts(data);
+            })
+            .catch(err => console.log(err));
     }, [])
-        
+
     function filterHandler(e) {
         const category = e.target.value;
         if (category == 'all') {
@@ -34,10 +36,12 @@ export default function Products() {
             const filteredProducts = allProducts.filter((product) => product.category === category);
             setProducts(filteredProducts);
         }
+        setFilter(category);
         console.log('after', products);
     }
 
     function sortHandler(e) {
+        const sort = e.target.value;
         const alphaSortedProducts = products.toSorted((a, b) => {
             const titleA = a.title.toUpperCase();
             const titleB = b.title.toUpperCase();
@@ -47,7 +51,8 @@ export default function Products() {
             return 0;
         })
 
-        switch (e.target.value) {
+        setSortBy(sort);
+        switch (sort) {
             case 'lowprice': {
                 const sortedProducts = products.toSorted((a, b) => a.price - b.price)
                 setProducts(sortedProducts);
@@ -82,7 +87,7 @@ export default function Products() {
             for (const word of wordsInTitle) {
                 if (word.substring(0, search.length).toLowerCase() == search.toLowerCase()) return isMatch = true;
             }
-            
+
             return isMatch;
         });
         setProducts(searchProducts);
@@ -97,17 +102,17 @@ export default function Products() {
         <div className={styles.container}>
             <aside className={styles.search}>
                 <form className={styles.searchForm} onSubmit={(e) => submissionHandler(e)}>
-                    <input onChange={(e) => searchHandler(e)} type="text" placeholder="Search Term"/>
-                    <input type="submit" value="Search"/>
+                    <input onChange={(e) => searchHandler(e)} value={search} type="text" placeholder="Search Term" />
+                    <input type="submit" value="Search" />
                     <label htmlFor="filter">Filter:</label>
-                    <select onChange={(e) => filterHandler(e)} id='filter'>
+                    <select onChange={(e) => filterHandler(e)} value={filter} id='filter'>
                         <option value="all">Show All</option>
                         <option value="desktop">Desktops</option>
                         <option value="laptop">Laptops</option>
                         <option value="accessory">Accessories</option>
                     </select>
                     <label htmlFor="sort">Sort By:</label>
-                    <select onChange={(e) => sortHandler(e)} value={search} id='sort'>
+                    <select onChange={(e) => sortHandler(e)} value={sortBy} id='sort'>
                         <option value="lowprice">Price: Low to High</option>
                         <option value="highprice">Price: High to Low</option>
                         <option value="atoz">Name: A to Z</option>
@@ -117,16 +122,17 @@ export default function Products() {
             </aside>
             {products.map((product, i) => {
                 return (
-                <Link to="/details" state={{from: 'Products', 'product': product}} key={i}>
-                    <div className={styles.product}>
-                        <div className={styles.productImage} style={{ backgroundImage: `url(${product.image_path})` }}></div>
-                        <p className={styles.productName}>{product.title}</p>
-                        <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
-                        <p className={styles.productDescription}>{product.description}</p>
-                        <button className={styles.cartButton}>Learn more</button>
-                    </div>
-                </Link>
-                )})}
+                    <Link to="/details" state={{ from: 'Products', 'product': product }} key={i}>
+                        <div className={styles.product}>
+                            <div className={styles.productImage} style={{ backgroundImage: `url(${product.image_path})` }}></div>
+                            <p className={styles.productName}>{product.title}</p>
+                            <p className={styles.productPrice}>${product.price.toFixed(2)}</p>
+                            <p className={styles.productDescription}>{product.description}</p>
+                            <button className={styles.cartButton}>Learn more</button>
+                        </div>
+                    </Link>
+                )
+            })}
         </div>
     )
 }

@@ -8,6 +8,7 @@ import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Products from './pages/Products'
 import Details from './pages/Details'
+import Login from './pages/Login'
 import PageNotFound from "./pages/PageNotFound"
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
