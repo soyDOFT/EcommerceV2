@@ -26,7 +26,6 @@ connection.connect((err) => {
 router.get('/products', async (req, res) => {
     try {
         const [products] = await connection.promise().execute(`SELECT * from products`);
-        console.log(products);
         res.json(products);
     } catch (err) {
         console.error(err);

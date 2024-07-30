@@ -9,16 +9,18 @@ export default function Contact() {
         console.log(e.target, 'clicked');
         let errorMsg = '';
         if (!e.target[0].value || e.target[0].value.match(/[0-9]/g)) {
-            errorMsg += 'Invalid First Name! ';
+            errorMsg += 'Invalid First Name!\n';
         }
         if (!e.target[1].value || e.target[1].value.match(/[0-9]/g)) {
-            errorMsg += 'Invalid First Name! ';
+            errorMsg += 'Invalid Last Name!\n';
         }
         if (!e.target[2].value) {
             errorMsg += 'Invalid Message!';
         }
         if (errorMsg) {
             alert(errorMsg);
+
+        } else {
             location.reload();
         }
 
